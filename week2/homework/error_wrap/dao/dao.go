@@ -7,8 +7,6 @@ import (
 
 func QueryUser() ([]int, error) {
 	data, err := mockDB.ErrQuery()
-	if err != nil {
-		err = errors.Wrap(err, "query user failed")
-	}
-	return data, err
+
+	return data, errors.Wrap(err, "query user failed")
 }
